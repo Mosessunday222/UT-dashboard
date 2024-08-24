@@ -2,14 +2,10 @@ import styled from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
-
-const H1 = styled.h1`
-  font-size: 30px;
-  font-weight: 600px;
-`;
+import Heading from "./ui/Heading";
+import Row from "./ui/Row";
 
 const StyledApp = styled.div`
-  background: orchid;
   padding: 20px;
 `;
 
@@ -18,13 +14,32 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <H1> helo world</H1>
-        <Button onClick={() => alert("me is checking in!!!")}>check in</Button>
-        <Button onClick={() => alert("me is checking out!!!!")}>
-          check out
-        </Button>
-        <Input placeholder="number of guess" type="number"></Input>
-        <Input placeholder="number of guess" type="number"></Input>
+        <Row>
+          <Row type="horizontal">
+            <Heading as="h1"> helo world</Heading>
+            <div>
+              <Heading as="h2"> check in and out</Heading>
+              <Button onClick={() => alert("me is checking in!!!")}>
+                check in
+              </Button>
+              <Button
+                size="small"
+                variation="secondary"
+                onClick={() => alert("me is checking out!!!!")}
+              >
+                check out
+              </Button>
+            </div>
+          </Row>
+
+          <Heading as="h3"> form</Heading>
+          <Row type="vertical">
+            <form>
+              <Input placeholder="number of guess" type="number"></Input>
+              <Input placeholder="number of guess" type="number"></Input>
+            </form>
+          </Row>
+        </Row>
       </StyledApp>
     </>
   );
