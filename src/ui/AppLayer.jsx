@@ -4,8 +4,10 @@ import Header from "./Header";
 import styled from "styled-components";
 
 const Main = styled.main`
-  background-color: var(--color-grey-50);
+  /* background-color: var(--color-grey-50); */
   padding: 4rem 4.8rem 6.4rem;
+  background-color: gold;
+  overflow: scroll;
 `;
 
 const StyledAppLayer = styled.div`
